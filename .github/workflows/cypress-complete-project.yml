@@ -1,0 +1,30 @@
+name: Cypress tests 
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - 'in-class-project/cypress/**'
+    
+jobs:
+    project-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.9.0
+            
+            - name: Install dependencies
+              run: npm install  
+              working-directory: ./in-class-project
+
+            - name: Run Cypress tests
+              run: npm run cypress:headless
+              working-directory: ./in-class-project
+
+        
