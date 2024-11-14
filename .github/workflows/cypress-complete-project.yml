@@ -3,9 +3,10 @@ name: Cypress tests
 on:
     push:
         branches:
-            - main
+            - master
         paths:
-            - 'in-class-project/cypress/**'
+           - 'in-class-project/**'
+           - '**/*.js'
     
 jobs:
     project-test:

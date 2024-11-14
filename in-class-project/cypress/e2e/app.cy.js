@@ -64,6 +64,10 @@ describe('Image Registration', () => {
     })
 
     it(`And I should see and exclamation icon in the title and URL fields`, () => {
+      // registerForm.elements.titleFeedback().should(element => {
+      //   debugger
+      // })
+
       registerForm.elements.titleInput().should(([element]) => {
         const stylus = window.getComputedStyle(element)
         const border = stylus.getPropertyValue('border-right-color')
